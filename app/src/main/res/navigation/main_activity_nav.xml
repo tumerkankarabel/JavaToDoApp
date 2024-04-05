@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main_activity_nav"
+    app:startDestination="@id/toDoHomePageFragment">
+
+    <fragment
+        android:id="@+id/toDoHomePageFragment"
+        android:name="com.tumerkankarabel.javatodoapp.ui.fragment.ToDoHomePageFragment"
+        android:label="fragment_todo_homepage"
+        tools:layout="@layout/fragment_todo_homepage" >
+        <action
+            android:id="@+id/passingDetail"
+            app:destination="@id/toDoDetailFragment" />
+        <action
+            android:id="@+id/passingRecord"
+            app:destination="@id/toDoRecordFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/toDoDetailFragment"
+        android:name="com.tumerkankarabel.javatodoapp.ui.fragment.ToDoDetailFragment"
+        android:label="fragment_todo_detail"
+        tools:layout="@layout/fragment_todo_detail" >
+        <argument
+            android:name="todo"
+            app:argType="com.tumerkankarabel.javatodoapp.data.entity.ToDos" />
+    </fragment>
+    <fragment
+        android:id="@+id/toDoRecordFragment"
+        android:name="com.tumerkankarabel.javatodoapp.ui.fragment.ToDoRecordFragment"
+        android:label="fragment_todo_record"
+        tools:layout="@layout/fragment_todo_record" />
+</navigation>
